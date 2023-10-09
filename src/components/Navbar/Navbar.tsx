@@ -1,4 +1,9 @@
+import { NavBrand } from './NavBrand';
 import './Navbar.css';
 export const Navbar = () => {
-	return <nav></nav>;
+	return (
+		<nav>
+			<NavBrand />
+		</nav>
+	);
 };

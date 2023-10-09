@@ -1,4 +1,24 @@
 nav {
 	background-color: black;
+	height: 2em;
+	display: flex;
+	align-items: center;
+	padding: 1em;
+}
+
+.brand {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+}
+
+.brand svg {
 	height: 3em;
+	width: 3em;
+}
+
+.brand p {
+	color: white;
+	font-weight: bold;
+	font-size: larger;
 }
