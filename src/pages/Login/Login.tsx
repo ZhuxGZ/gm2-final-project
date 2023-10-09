@@ -8,7 +8,7 @@ export const Login = () => {
             </div>
             <div className="form">
                 <input id="username" type="text" placeholder="Username" />
-                <input id="password" type="password" placeholder="Password" aria-label="email" />
+                <input id="password" type="password" placeholder="Password" />
                 <button id="login" type="submit">Login</button>
             </div>
         </div>
