@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 interface AppLayoutProps {
-	children: ReactNode[];
+	children: ReactNode;
 }
 
 export const AppLayout = ({ children }: AppLayoutProps) => {
