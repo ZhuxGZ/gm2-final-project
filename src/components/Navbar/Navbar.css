@@ -22,3 +22,21 @@ nav {
 	font-weight: bold;
 	font-size: larger;
 }
+
+.nav-list {
+	margin-left: auto;
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	list-style: none;
+	color: white;
+}
+
+.nav-item {
+	font-size: 1.25em;
+	text-align: center;
+}
+
+.nav-item:hover {
+	color: gray;
+}
