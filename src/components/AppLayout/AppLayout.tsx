@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { Navbar } from '..';
 
 interface AppLayoutProps {
 	children: ReactNode;
@@ -7,7 +8,9 @@ interface AppLayoutProps {
 export const AppLayout = ({ children }: AppLayoutProps) => {
 	return (
 		<>
-			<header></header>
+			<header>
+				<Navbar />
+			</header>
 			<main>{children}</main>
 		</>
 	);
