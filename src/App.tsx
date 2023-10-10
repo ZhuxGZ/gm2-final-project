@@ -5,15 +5,15 @@ import { AppLayout } from './components';
 
 function App() {
 	return (
-		<AppLayout>
-			<BrowserRouter>
+		<BrowserRouter>
+			<AppLayout>
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/login" element={<Login />} />
 					<Route path='/profile' element={<Profile />} />
 				</Routes >
-			</BrowserRouter>
-		</AppLayout>
+			</AppLayout>
+		</BrowserRouter>
 	);
 }
 
