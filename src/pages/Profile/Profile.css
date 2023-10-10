@@ -1,0 +1,10 @@
+.contentCard {
+    background-color: aqua;
+    display: flex;
+    gap: 2em;
+}
+
+.img-profile {
+    height: 100%;
+    width: 30em;
+}
