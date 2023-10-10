@@ -1,0 +1,17 @@
+.prod-container {
+	box-sizing: border-box;
+	padding: 1em;
+	display: grid;
+	width: 100vw;
+}
+
+.prod-image {
+	border-radius: 1em;
+	width: 100%;
+	height: 20em;
+	background-color: grey;
+}
+
+.prod-info-title {
+	margin-top: 1em;
+}
