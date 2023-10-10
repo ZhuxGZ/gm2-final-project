@@ -1,9 +1,9 @@
-import { NavLogo } from './NavLogo';
+import { Logo } from '..';
 
 export const NavBrand = () => {
 	return (
 		<div className="brand">
-			<NavLogo />
+			<Logo />
 			<p>The best ecommerce ever</p>
 		</div>
 	);
