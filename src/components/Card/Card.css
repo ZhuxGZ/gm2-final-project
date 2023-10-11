@@ -4,14 +4,13 @@
     align-items: center;
     width: 15em;
     height: 20em;
-    border: solid 0.1em transparent;
     border-radius: 0.75em;
     background-color: #F95B2E;
     transition: 1s;
 }
 
 .structure-card:hover {
-    transform: scale(1.05, 1.05);
+    transform: scale(1.05);
 }
 
 .img-rating-container {
