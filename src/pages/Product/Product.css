@@ -1,4 +1,4 @@
-.prod-container {
+.prod-page {
 	box-sizing: border-box;
 	padding: 1em;
 	display: grid;
@@ -52,7 +52,8 @@
 }
 
 .prod-buttons {
-	display: grid;
+	display: flex;
+	flex-direction: column;
 	margin-top: 1em;
 	margin-left: 2em;
 	width: 90%;
@@ -63,8 +64,41 @@
 	border: none;
 	border-radius: 1em;
 	font-weight: bold;
+	height: 3em;
 }
 
 .prod-buy {
 	background: #e3cb52;
+}
+
+@media screen and (min-width: 720px) {
+	.prod-page {
+		gap: 2em;
+		height: 100vh;
+		align-items: center;
+	}
+
+	.prod-container {
+		display: flex;
+		gap: 2em;
+	}
+
+	.prod-info {
+		display: grid;
+		grid-template-rows: 17% 10%;
+		align-self: flex-start;
+		height: 25em;
+	}
+
+	.prod-info-description {
+		align-self: flex-start;
+	}
+
+	.prod-bottom {
+		align-items: flex-end;
+	}
+
+	.prod-buttons button {
+		height: 3em;
+	}
 }
