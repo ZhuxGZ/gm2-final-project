@@ -2,16 +2,69 @@
 	box-sizing: border-box;
 	padding: 1em;
 	display: grid;
-	width: 100vw;
 }
 
-.prod-image {
+.prod-main-image {
 	border-radius: 1em;
 	width: 100%;
-	height: 20em;
+	height: 25em;
 	background-color: grey;
 }
 
+.prod-all-image {
+	margin-top: 0.5em;
+	display: flex;
+	justify-content: center;
+	gap: 1em;
+}
+
+.all-image-image {
+	background-color: grey;
+	width: 5em;
+	height: 5em;
+	border-radius: 0.3em;
+}
+
 .prod-info-title {
+	margin-top: 0.7em;
+	font-size: 2em;
+	text-align: start;
+}
+
+.prod-prices {
 	margin-top: 1em;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: brown;
+}
+
+.prod-info-price {
+	font-size: 1.25em;
+	text-decoration: line-through;
+}
+
+.prod-info-discount {
+	font-size: 1.75em;
+}
+
+.prod-bottom {
+	display: flex;
+}
+
+.prod-buttons {
+	display: grid;
+	margin-top: 1em;
+	margin-left: 2em;
+	width: 90%;
+	gap: 0.2em;
+}
+
+.prod-buttons button {
+	border: none;
+	border-radius: 1em;
+	font-weight: bold;
+}
+
+.prod-buy {
+	background: #e3cb52;
 }
