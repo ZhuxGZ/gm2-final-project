@@ -1,5 +1,4 @@
 import "./home.css"
-import { Card } from "../../components";
 
 export const Home = () => {
 	return (
@@ -10,9 +9,6 @@ export const Home = () => {
 			<div className="home-featured-products">
 				<h3 className="featured-products-title">Featured products</h3>
 				<div className="featured-products-container"></div>
-			</div>
-			<div>
-				<Card />
 			</div>
 		</div>
 

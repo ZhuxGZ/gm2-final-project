@@ -9,12 +9,18 @@ export const Card = () => {
                     <p className="card-rating">#1</p>
                 </div>
                 <div className="card-info">
-                    <h1 className="product-name">Messi culiplancheo</h1>
-                    <div className="prices">
-                        <p className="original-price">$10</p>
-                        <p className="price-with-discount">$5</p>
-                        <p className="stock">unidades disponibles: 20</p>
+                    <h1 className="product-name">Messi Culiplancheo</h1>
+                    <div className="product-number-data">
+                        <div className="prices">
+                            <p className="original-price">$10</p>
+                            <p className="price-with-discount">$5</p>
+                            <p className="stock">Stock: 20</p>
+                        </div>
                     </div>
+                </div>
+                <div className="card-buttons">
+                    <button className="buttons-container">Wishlist</button>
+                    <button className="buttons-container">Cart</button>
                 </div>
             </div>
         </>
