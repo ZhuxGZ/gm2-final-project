@@ -1,4 +1,5 @@
 import './Profile.css'
+import { Table } from '../../components/Table';
 export interface Welcome {
     id: number;
     firstName: string;
@@ -59,21 +60,28 @@ export interface Hair {
 
 export const Profile = () => {
     return (
-        <div className='Card'>
-            <div className='contentCard'>
-                <div className="post main">
-                    <div className="preview">
-                        <img className='img-profile' src="https://robohash.org/hicveldicta.png" alt="" />
-                    </div>
-                    <div className="details-profile">
-                        <h2>Username</h2>
-                        <h2>Age</h2>
-                        <h2>email</h2>
-                        <h2>phone number</h2>
-                        <h2>direction</h2>
+        <>
+            <div className='Card' >
+                <div className='contentCard'>
+                    <div className="post main">
+                        <div className="preview">
+                            <img className='img-profile' src="https://robohash.org/hicveldicta.png" alt="" />
+                        </div>
+                        <div className="details-profile">
+                            <h2>Username</h2>
+                            <h2>Age</h2>
+                            <h2>email</h2>
+                            <h2>phone number</h2>
+                            <h2>direction</h2>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+            <div className='tableComponent'>
+                <Table />
+            </div>
+        </>
+
     )
 }
