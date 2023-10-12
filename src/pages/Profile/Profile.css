@@ -17,6 +17,11 @@
     font-family: sans-serif;
 }
 
+.tableComponent {
+    padding-top: 1em;
+
+}
+
 .preview {
     display: flex;
     flex-direction: column;
