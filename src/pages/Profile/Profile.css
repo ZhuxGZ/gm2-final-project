@@ -1,0 +1,41 @@
+.post {
+    display: flex;
+    gap: 2em;
+    margin: 1em auto 0;
+    background: #eceff1;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.details-profile {
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.details-profile>h2 {
+    font-family: sans-serif;
+}
+
+.tableComponent {
+    padding-top: 1em;
+    height: 99%;
+}
+
+.preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    width: 99%;
+    height: 20em;
+}
+
+.main>.preview {
+    width: 25%;
+    height: 100%;
+    background: #F95B2E;
+}

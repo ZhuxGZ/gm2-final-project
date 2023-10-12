@@ -1,17 +1,21 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Home, Login, Product } from './pages';
+import { Home, Login, Profile, Product } from './pages';
 import { AppLayout } from './components';
+import { LoginStatusProvider } from './hooks';
 
 function App() {
 	return (
 		<BrowserRouter>
 			<AppLayout>
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/login" element={<Login />} />
-					<Route path="/product/:id" element={<Product />} />
-				</Routes>
+				<LoginStatusProvider>
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/login" element={<Login />} />
+						<Route path="/product/:id" element={<Product />} />
+						<Route path="/profile" element={<Profile />} />
+					</Routes>
+				</LoginStatusProvider>
 			</AppLayout>
 		</BrowserRouter>
 	);
