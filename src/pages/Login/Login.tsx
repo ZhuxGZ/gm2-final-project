@@ -7,7 +7,6 @@ export const Login = () => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		console.log({ isLogged });
 		if (isLogged) {
 			navigate('/');
 		}
@@ -27,7 +26,11 @@ export const Login = () => {
 					className="form"
 					onSubmit={(event) => {
 						event.preventDefault();
-						getUserData(event.target[0].value, event.target[1].value);
+						console.log(new FormData(event.currentTarget));
+						console.log(new FormData(event.currentTarget));
+						const username = event.target[0].value;
+						const password = event.target[1].value;
+						getUserData(username, password);
 					}}
 				>
 					<input id="username" type="text" placeholder="Username" />

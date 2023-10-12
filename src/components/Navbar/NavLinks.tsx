@@ -1,7 +1,6 @@
 import { UserIcon } from '..';
 import { Link } from 'react-router-dom';
 import { useLoginStatus } from '../../hooks';
-import { useEffect } from 'react';
 
 export const NavLinks = () => {
 	const { isLogged } = useLoginStatus();
