@@ -1,0 +1,12 @@
+.table-view {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    border: solid black;
+    background-color: #F95B2E;
+    align-items: center;
+}
+
+.border {
+    height: 100%;
+    border: 1px solid black;
+}
