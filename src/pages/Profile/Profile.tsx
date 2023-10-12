@@ -78,7 +78,7 @@ export const Profile = () => {
                 </div>
             </div>
 
-            <div>
+            <div className='tableComponent'>
                 <Table />
             </div>
         </>
