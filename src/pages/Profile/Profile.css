@@ -19,7 +19,11 @@
 
 .tableComponent {
     padding-top: 1em;
+<<<<<<< HEAD
 
+=======
+    height: 99%;
+>>>>>>> 7e66ba51113ba45e3801014cc89f843f043fbdea
 }
 
 .preview {

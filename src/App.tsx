@@ -1,7 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Home, Login, Product, Profile } from './pages';
-
+import { Home, Login, Profile, Product } from './pages';
 import { AppLayout } from './components';
 
 function App() {
@@ -14,8 +13,8 @@ function App() {
 					<Route path='/profile' element={<Profile />} />
 					<Route path="/product/:id" element={<Product />} />
 				</Routes>
-			</AppLayout >
-		</BrowserRouter >
+			</AppLayout>
+		</BrowserRouter>
 	);
 }
 
