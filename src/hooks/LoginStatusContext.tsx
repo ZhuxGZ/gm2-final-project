@@ -24,7 +24,7 @@ export const useLoginStatus = () => {
 
 export const LoginStatusProvider = ({ children }: { children: ReactNode }) => {
 	const [userData, setUserData] = useState<User>();
-	const isLogged = !!userData;
+	const isLogged = !!userData?.token;
 
 	const getUserData = async (username: string, password: string) => {
 		const options = {
