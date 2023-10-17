@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useProducts } from '../../hooks';
 import './Product.css';
+import { calculateDiscount } from '../../utils';
 
 export const Product = () => {
 	const { id } = useParams();
@@ -26,7 +27,9 @@ export const Product = () => {
 					<section className="prod-bottom">
 						<section className="prod-prices">
 							<p className="prod-info-price">${product[0]?.price}</p>
-							<p className="prod-info-discount">$200</p>
+							<p className="prod-info-discount">
+								{calculateDiscount(product[0]?.price, product[0]?.discountPercentage)}
+							</p>
 						</section>
 						<section className="prod-buttons">
 							<button className="prod-add-to-favorite">Add to favorites</button>
