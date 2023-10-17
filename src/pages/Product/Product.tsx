@@ -28,7 +28,7 @@ export const Product = () => {
 						<section className="prod-prices">
 							<p className="prod-info-price">${product[0]?.price}</p>
 							<p className="prod-info-discount">
-								{calculateDiscount(product[0]?.price, product[0]?.discountPercentage)}
+								${calculateDiscount(product[0]?.price, product[0]?.discountPercentage)}
 							</p>
 						</section>
 						<section className="prod-buttons">

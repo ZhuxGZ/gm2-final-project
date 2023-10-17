@@ -39,6 +39,10 @@
 	color: brown;
 }
 
+.prod-info {
+	max-height: 100%;
+}
+
 .prod-info-price {
 	font-size: 1.25em;
 	text-decoration: line-through;
