@@ -27,7 +27,7 @@ export const useProducts = () => {
 };
 
 interface ProductsProviderProps {
-	children: ReactNode[];
+	children: ReactNode;
 }
 
 export const ProductsProvider = ({ children }: ProductsProviderProps) => {
