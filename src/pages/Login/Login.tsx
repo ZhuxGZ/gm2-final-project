@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { SyntheticEvent, useEffect } from 'react';
 import { useLoginStatus } from '../../hooks/LoginStatusContext';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
@@ -7,7 +7,6 @@ export const Login = () => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		console.log({ isLogged });
 		if (isLogged) {
 			navigate('/');
 		}
@@ -27,7 +26,10 @@ export const Login = () => {
 					className="form"
 					onSubmit={(event) => {
 						event.preventDefault();
-						getUserData(event.target[0].value, event.target[1].value);
+						const inputs = event.currentTarget as unknown as HTMLInputElement[];
+						const username = inputs[0].value;
+						const password = inputs[1].value;
+						getUserData(username, password);
 					}}
 				>
 					<input id="username" type="text" placeholder="Username" />

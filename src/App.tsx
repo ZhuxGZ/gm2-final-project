@@ -7,16 +7,16 @@ import { LoginStatusProvider } from './hooks';
 function App() {
 	return (
 		<BrowserRouter>
-			<AppLayout>
-				<LoginStatusProvider>
+			<LoginStatusProvider>
+				<AppLayout>
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/login" element={<Login />} />
 						<Route path="/product/:id" element={<Product />} />
 						<Route path="/profile" element={<Profile />} />
 					</Routes>
-				</LoginStatusProvider>
-			</AppLayout>
+				</AppLayout>
+			</LoginStatusProvider>
 		</BrowserRouter>
 	);
 }
