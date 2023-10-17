@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext, createContext, ReactNode } from 'react';
+import { Product } from '../pages';
 
 export interface Product {
 	id: number;
@@ -20,14 +21,14 @@ export interface FetchResponse {
 	limit: number;
 }
 
-const ProductsContext = createContext({});
+const ProductsContext = createContext();
 
 export const useProducts = () => {
 	return useContext(ProductsContext);
 };
 
 interface ProductsProviderProps {
-	children: ReactNode[];
+	children: ReactNode;
 }
 
 export const ProductsProvider = ({ children }: ProductsProviderProps) => {
