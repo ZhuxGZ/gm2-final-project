@@ -1,6 +1,13 @@
+import { useParams } from 'react-router-dom';
+import { useProducts } from '../../hooks';
 import './Product.css';
 
 export const Product = () => {
+	const { id } = useParams();
+	const productList = useProducts();
+	const product = productList.filter((product) => product.id == id);
+	console.log(product[0]);
+
 	return (
 		<section className="prod-page">
 			<section className="prod-container">
@@ -14,15 +21,11 @@ export const Product = () => {
 					</section>
 				</section>
 				<section className="prod-info">
-					<h3 className="prod-info-title">Prod Name</h3>
-					<p className="prod-info-description">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates veritatis facilis
-						laboriosam excepturi modi iste voluptatum suscipit, quae quis necessitatibus fugit sit
-						dignissimos repellendus
-					</p>
+					<h3 className="prod-info-title">{product[0]?.title}</h3>
+					<p className="prod-info-description">{product[0]?.description}</p>
 					<section className="prod-bottom">
 						<section className="prod-prices">
-							<p className="prod-info-price">$800</p>
+							<p className="prod-info-price">${product[0]?.price}</p>
 							<p className="prod-info-discount">$200</p>
 						</section>
 						<section className="prod-buttons">
