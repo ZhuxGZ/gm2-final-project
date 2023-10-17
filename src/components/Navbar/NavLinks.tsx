@@ -15,11 +15,10 @@ export const NavLinks = () => {
 				</>
 			)}
 			<li className="nav-item">Shop</li>
-			<li>
-				<Link to={'/login'}>
-					<UserIcon />
-				</Link>
-			</li>
+
+			<Link to={isLogged ? '/profile' : '/login'}>
+				<UserIcon />
+			</Link>
 		</ul>
 	);
 };
