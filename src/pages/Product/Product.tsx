@@ -6,18 +6,18 @@ export const Product = () => {
 	const { id } = useParams();
 	const productList = useProducts();
 	const product = productList.filter((product) => product.id == id);
-	console.log(product[0]);
 
 	return (
 		<section className="prod-page">
 			<section className="prod-container">
 				<section className="prod-images">
-					<section className="prod-main-image"></section>
+					<section className="prod-main-image">
+						<img className="prod-main-image" src={product[0]?.images[0]} alt="" />
+					</section>
 					<section className="prod-all-image">
-						<div className="all-image-image"></div>
-						<div className="all-image-image"></div>
-						<div className="all-image-image"></div>
-						<div className="all-image-image"></div>
+						{product[0]?.images.map((images) => {
+							return <img key={images} className="all-image-image" src={images} alt="" />;
+						})}
 					</section>
 				</section>
 				<section className="prod-info">
