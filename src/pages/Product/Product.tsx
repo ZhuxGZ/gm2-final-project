@@ -1,12 +1,12 @@
 import { useParams } from 'react-router-dom';
-import { useProducts } from '../../hooks';
+import { Product, useProducts } from '../../hooks';
 import './Product.css';
 import { calculateDiscount } from '../../utils';
 
 export const Product = () => {
 	const { id } = useParams();
 	const productList = useProducts();
-	const product = productList.filter((product) => product.id == id);
+	const product: Product[] = productList.filter((product) => product.id == Number(id));
 
 	return (
 		<section className="prod-page">

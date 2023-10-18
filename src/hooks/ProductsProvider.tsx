@@ -21,7 +21,7 @@ export interface FetchResponse {
 	limit: number;
 }
 
-const ProductsContext = createContext();
+const ProductsContext = createContext([] as Product[]);
 
 export const useProducts = () => {
 	return useContext(ProductsContext);
