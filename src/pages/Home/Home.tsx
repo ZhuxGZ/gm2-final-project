@@ -1,4 +1,5 @@
-import { CardView } from '../../components/CardView';
+
+import { WhisList } from '../WishList';
 import './Home.css';
 
 export const Home = () => {
@@ -12,6 +13,9 @@ export const Home = () => {
 					<h3 className="featured-products-title">Featured products</h3>
 					<div className="featured-products-container"></div>
 				</div>
+			</div>
+			<div>
+				<WhisList />
 			</div>
 		</>
 	);
