@@ -15,7 +15,7 @@ function App() {
 							<Route path="/login" element={<Login />} />
 							<Route path="/product/:id" element={<Product />} />
 							<Route path="/profile" element={<Profile />} />
-							<Route path='./shop' element={<Shop />} />
+							<Route path="/shop" element={<Shop />} />
 						</Routes>
 					</AppLayout>
 				</ProductsProvider>
