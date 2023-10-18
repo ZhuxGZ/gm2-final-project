@@ -20,7 +20,7 @@ export const Filter = () => {
             </div>
             <div className='filter-categories container-filter filter-center'>
                 <h3>Categories</h3>
-                <select name="" id=""><option value="">pene</option><option value="">penex2</option></select>
+                <select name="" id=""><option value="">hola</option><option value="">mundo</option></select>
             </div>
         </div>
 

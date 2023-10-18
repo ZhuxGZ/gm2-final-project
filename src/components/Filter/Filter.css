@@ -9,26 +9,26 @@
 .filter-description {
     display: flex;
     gap: 1em;
-    padding: 0 1em 1em 0;
+    padding: 0 1em 1em 1em;
 
 }
 
 .filter-minprice {
     display: flex;
     gap: 4em;
-    padding: 0 1em 1em 0;
+    padding: 0 1em 1em 1em;
 }
 
 .filter-maxprice {
     display: flex;
     gap: 3.8em;
-    padding: 0 1em 1em 0;
+    padding: 0 1em 1em 1em;
 }
 
 .filter-categories {
     display: flex;
     gap: 2.8em;
-    padding: 0 1em 1em 0;
+    padding: 0 1em 1em 1em;
 }
 
 .filter-title {
