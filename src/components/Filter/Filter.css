@@ -1,0 +1,59 @@
+.content-filter {
+    width: 25%;
+    height: 15em;
+    background-color: #B6B6B6;
+    gap: 0.5em;
+    font-size: small;
+}
+
+.filter-description {
+    display: flex;
+    gap: 1em;
+    padding: 0 1em 1em 1em;
+
+}
+
+.filter-minprice {
+    display: flex;
+    gap: 4em;
+    padding: 0 1em 1em 1em;
+}
+
+.filter-maxprice {
+    display: flex;
+    gap: 3.8em;
+    padding: 0 1em 1em 1em;
+}
+
+.filter-categories {
+    display: flex;
+    gap: 2.8em;
+    padding: 0 1em 1em 1em;
+}
+
+.filter-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filter-center {
+    align-items: center;
+}
+
+input {
+    width: 100%;
+    height: 20%;
+    outline: none;
+}
+
+input[type="range"] {
+    background: transparent;
+    accent-color: #F95B2E;
+    width: 15em;
+}
+
+select {
+    width: 100%;
+    outline: none;
+}
