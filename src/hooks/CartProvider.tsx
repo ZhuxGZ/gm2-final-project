@@ -9,25 +9,27 @@ type CartProvider = {
 const CartContext = createContext({} as CartProvider);
 export const useCart = () => useContext(CartContext);
 
+let firstTime = 0;
+
 export const CartProvider = ({ children }: { children: ReactNode }) => {
 	const [cartList, setCartList] = useState<Product[]>([]);
-	const cartLocalStorage = JSON.parse(localStorage.getItem('cartList'));
-
 	useEffect(() => {
-		if (cartLocalStorage) {
-			setCartList(cartLocalStorage);
-		} else {
+		if (cartList.length) {
 			localStorage.setItem('cartList', JSON.stringify(cartList));
+			firstTime++;
 		}
-	}, []);
-
-	console.log(cartList);
+	}, [cartList]);
 
 	const updateCartList = (product: Product) => {
-		const newCartList = [...cartLocalStorage];
+		const newCartList = [...cartList];
+		const localStorageCart = JSON.parse(localStorage.getItem('cartList') as string);
+
+		if (firstTime === 0 && localStorageCart !== null) {
+			newCartList.push(...localStorageCart);
+		}
+
 		newCartList.push(product);
-		localStorage.setItem('cartList', JSON.stringify(newCartList));
-		setCartList(cartLocalStorage);
+		setCartList(newCartList);
 	};
 
 	return (
