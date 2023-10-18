@@ -1,5 +1,6 @@
 import { ReactNode, createContext, useContext, useEffect, useState } from 'react';
-import { Product } from '.';
+import { useNavigate } from 'react-router-dom';
+import { Product, useLoginStatus } from '.';
 
 type CartProvider = {
 	updateCartList: (product: Product) => void;
@@ -13,6 +14,8 @@ let firstTime = 0;
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
 	const [cartList, setCartList] = useState<Product[]>([]);
+	const { isLogged } = useLoginStatus();
+	const navigate = useNavigate();
 	useEffect(() => {
 		if (cartList.length) {
 			localStorage.setItem('cartList', JSON.stringify(cartList));
@@ -21,15 +24,19 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 	}, [cartList]);
 
 	const updateCartList = (product: Product) => {
-		const newCartList = [...cartList];
-		const localStorageCart = JSON.parse(localStorage.getItem('cartList') as string);
+		if (isLogged) {
+			const newCartList = [...cartList];
+			const localStorageCart = JSON.parse(localStorage.getItem('cartList') as string);
 
-		if (firstTime === 0 && localStorageCart !== null) {
-			newCartList.push(...localStorageCart);
+			if (firstTime === 0 && localStorageCart !== null) {
+				newCartList.push(...localStorageCart);
+			}
+
+			newCartList.push(product);
+			setCartList(newCartList);
+		} else {
+			navigate('/login');
 		}
-
-		newCartList.push(product);
-		setCartList(newCartList);
 	};
 
 	return (
