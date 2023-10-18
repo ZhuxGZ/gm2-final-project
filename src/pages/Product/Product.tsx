@@ -1,12 +1,15 @@
-import { useParams } from 'react-router-dom';
-import { useProducts } from '../../hooks';
+import { useNavigate, useParams } from 'react-router-dom';
+import { Product, Product, useCart, useLoginStatus, useProducts } from '../../hooks';
 import './Product.css';
 import { calculateDiscount } from '../../utils';
 
 export const Product = () => {
 	const { id } = useParams();
+	const { updateCartList } = useCart();
+	const { isLogged } = useLoginStatus();
 	const productList = useProducts();
-	const product = productList.filter((product) => product.id == id);
+	const product: Product[] = productList.filter((product) => product.id == id);
+	const navigate = useNavigate();
 
 	return (
 		<section className="prod-page">
@@ -33,7 +36,18 @@ export const Product = () => {
 						</section>
 						<section className="prod-buttons">
 							<button className="prod-add-to-favorite">Add to favorites</button>
-							<button className="prod-buy">Buy</button>
+							<button
+								onClick={() => {
+									if (!isLogged) {
+										navigate('/login');
+									} else {
+										updateCartList(product[0]);
+									}
+								}}
+								className="prod-buy"
+							>
+								Buy
+							</button>
 						</section>
 					</section>
 				</section>
