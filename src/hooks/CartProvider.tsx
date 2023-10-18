@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useContext, useState } from 'react';
+import { ReactNode, createContext, useContext, useEffect, useState } from 'react';
 import { Product } from '.';
 
 type CartProvider = {
@@ -11,11 +11,23 @@ export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
 	const [cartList, setCartList] = useState<Product[]>([]);
+	const cartLocalStorage = JSON.parse(localStorage.getItem('cartList'));
+
+	useEffect(() => {
+		if (cartLocalStorage) {
+			setCartList(cartLocalStorage);
+		} else {
+			localStorage.setItem('cartList', JSON.stringify(cartList));
+		}
+	}, []);
+
+	console.log(cartList);
 
 	const updateCartList = (product: Product) => {
-		const newCartList = [...cartList];
+		const newCartList = [...cartLocalStorage];
 		newCartList.push(product);
-		setCartList(newCartList);
+		localStorage.setItem('cartList', JSON.stringify(newCartList));
+		setCartList(cartLocalStorage);
 	};
 
 	return (

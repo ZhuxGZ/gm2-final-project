@@ -1,6 +1,8 @@
+import { useCart } from '../../hooks';
 import './Cart.css';
 
 export const Cart = () => {
+	const { cartList } = useCart();
 	return (
 		<div className="cart-container">
 			<div className="cart-top">
