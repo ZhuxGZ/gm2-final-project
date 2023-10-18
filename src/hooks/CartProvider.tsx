@@ -1,7 +1,12 @@
 import { ReactNode, createContext, useContext, useState } from 'react';
 import { Product } from '.';
 
-const CartContext = createContext({});
+type CartProvider = {
+	updateCartList: (product: Product) => void;
+	cartList: Product[];
+};
+
+const CartContext = createContext({} as CartProvider);
 export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
