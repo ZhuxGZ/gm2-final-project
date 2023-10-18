@@ -1,15 +1,13 @@
-import { useNavigate, useParams } from 'react-router-dom';
-import { Product, Product, useCart, useLoginStatus, useProducts } from '../../hooks';
+import { useParams } from 'react-router-dom';
+import { Product, useCart, useProducts } from '../../hooks';
 import './Product.css';
 import { calculateDiscount } from '../../utils';
 
-export const Product = () => {
+export const ProductPage = () => {
 	const { id } = useParams();
 	const { updateCartList } = useCart();
-	const { isLogged } = useLoginStatus();
 	const productList = useProducts();
-	const product: Product[] = productList.filter((product) => product.id == id);
-	const navigate = useNavigate();
+	const product: Product[] = productList.filter((product) => product.id === Number(id));
 
 	return (
 		<section className="prod-page">
@@ -38,11 +36,7 @@ export const Product = () => {
 							<button className="prod-add-to-favorite">Add to favorites</button>
 							<button
 								onClick={() => {
-									if (!isLogged) {
-										navigate('/login');
-									} else {
-										updateCartList(product[0]);
-									}
+									updateCartList(product[0]);
 								}}
 								className="prod-buy"
 							>
