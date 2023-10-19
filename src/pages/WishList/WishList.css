@@ -1,0 +1,22 @@
+.wishList-content{
+    background-color: #D9D9D9;
+}
+
+.change-button{
+    margin-left: 90%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 1em;
+    padding: 0.35em;
+    border: solid 0.1em black;
+    border-radius: 1.5em;
+    transition: 0.5s;
+}
+
+.change-button:hover{
+    background-color: #F95B2E;
+}
+
+.views-container{
+    margin-top: 0em;
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { CardView } from "../../components/CardView";
 import { Table } from "../../components/Table";
+import "./WishList.css"
 
 export const WhisList = () => {
     const [currentView, setCurrentView] = useState('CardView');
@@ -11,7 +12,7 @@ export const WhisList = () => {
     };
 
     return (
-        <div className='change-views-content'>
+        <div className='wishList-content'>
             <button className='change-button' onClick={toggleView}>Change View</button>
             <div className="views-container">
                 {currentView === 'CardView' && <CardView />}
