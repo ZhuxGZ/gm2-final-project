@@ -1,0 +1,29 @@
+.cart-container {
+	padding: 1em;
+}
+
+.cart-top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 0.5em;
+	border-bottom: 1px solid gray;
+}
+
+.cart-buy {
+	width: 8em;
+	padding: 0.5em;
+	border: none;
+	border-radius: 1em;
+	font-weight: bold;
+	font-size: larger;
+	background-color: #6ce277;
+}
+
+.cart-product-display {
+	display: grid;
+	padding: 1em;
+	gap: 1em;
+	grid-template-columns: repeat(auto-fit, 16em);
+	place-content: center;
+}
