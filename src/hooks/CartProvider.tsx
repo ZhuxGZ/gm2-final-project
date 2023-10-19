@@ -16,6 +16,11 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 	const [cartList, setCartList] = useState<Product[]>([]);
 	const { isLogged } = useLoginStatus();
 	const navigate = useNavigate();
+
+	useEffect(() => {
+		setCartList(JSON.parse(localStorage.getItem('cartList') as string));
+	}, []);
+
 	useEffect(() => {
 		if (cartList.length) {
 			localStorage.setItem('cartList', JSON.stringify(cartList));
