@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-import { WhisList } from '../WishList';
-=======
->>>>>>> 7112c28d766b47fdbf7db8905defd2d87ca3f2d9
-=======
->>>>>>> 7112c28d766b47fdbf7db8905defd2d87ca3f2d9
 import './Home.css';
 
 export const Home = () => {
@@ -17,19 +9,7 @@ export const Home = () => {
 			<div className="home-featured-products">
 				<h3 className="featured-products-title">Featured products</h3>
 				<div className="featured-products-container"></div>
-<<<<<<< HEAD
-			</div>
-<<<<<<< HEAD
-			<div>
-				<WhisList />
-			</div>
-		</>
-=======
-		</div>
->>>>>>> 7112c28d766b47fdbf7db8905defd2d87ca3f2d9
-=======
 			</div>
 		</div>
->>>>>>> 7112c28d766b47fdbf7db8905defd2d87ca3f2d9
-	);
+  );
 };

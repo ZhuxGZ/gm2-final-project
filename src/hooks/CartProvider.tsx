@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { Product, useLoginStatus } from '.';
 
 type CartProvider = {
-	updateCartList: (product: Product) => void;
+	addCartList: (product: Product) => void;
+	delCartList: (index: number) => void;
 	cartList: Product[];
 };
 
@@ -22,12 +23,10 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 	}, []);
 
 	useEffect(() => {
-		if (cartList.length) {
-			localStorage.setItem('cartList', JSON.stringify(cartList));
-		}
+		localStorage.setItem('cartList', JSON.stringify(cartList));
 	}, [cartList]);
 
-	const updateCartList = (product: Product) => {
+	const addCartList = (product: Product) => {
 		if (isLogged) {
 			const newCartList = [...cartList];
 			newCartList.push(product);
@@ -37,7 +36,19 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 		}
 	};
 
+	const delCartList = (index: number) => {
+		if (isLogged) {
+			const newCartList = [...cartList];
+			newCartList.splice(index, 1);
+			setCartList(newCartList);
+		} else {
+			navigate('/login');
+		}
+	};
+
 	return (
-		<CartContext.Provider value={{ cartList, updateCartList }}>{children}</CartContext.Provider>
+		<CartContext.Provider value={{ cartList, addCartList, delCartList }}>
+			{children}
+		</CartContext.Provider>
 	);
 };

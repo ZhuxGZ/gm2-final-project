@@ -1,9 +1,10 @@
-import { Product } from '../../hooks';
+import { Product, useCart } from '../../hooks';
 import { calculateDiscount } from '../../utils';
 import './Card.css';
 
-export const Card = ({ props }: { props: Product }) => {
-	const { title, desciption, price, discountPercentage, rating, stock, images } = props;
+export const Card = ({ props, index }: { props: Product; index: number }) => {
+	const { title, price, discountPercentage, rating, stock, images } = props;
+	const { delCartList } = useCart();
 	return (
 		<>
 			<div className="structure-card">
@@ -22,8 +23,14 @@ export const Card = ({ props }: { props: Product }) => {
 					</div>
 				</div>
 				<div className="card-buttons">
-					<button className="buttons-container">Wishlist</button>
-					<button className="buttons-container">Cart</button>
+					{index !== undefined ? (
+						<button onClick={() => delCartList(index)}>Remove</button>
+					) : (
+						<>
+							<button className="buttons-container">Wishlist</button>
+							<button className="buttons-container">Cart</button>
+						</>
+					)}
 				</div>
 			</div>
 		</>
