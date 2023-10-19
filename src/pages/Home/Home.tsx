@@ -1,3 +1,4 @@
+import { WhisList } from '../WishList';
 import './Home.css';
 
 export const Home = () => {
