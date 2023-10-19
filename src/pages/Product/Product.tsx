@@ -1,12 +1,13 @@
 import { useParams } from 'react-router-dom';
-import { useProducts } from '../../hooks';
+import { Product, useCart, useProducts } from '../../hooks';
 import './Product.css';
 import { calculateDiscount } from '../../utils';
 
-export const Product = () => {
+export const ProductPage = () => {
 	const { id } = useParams();
+	const { updateCartList } = useCart();
 	const productList = useProducts();
-	const product = productList.filter((product) => product.id == id);
+	const product: Product[] = productList.filter((product) => product.id === Number(id));
 
 	return (
 		<section className="prod-page">
@@ -33,7 +34,14 @@ export const Product = () => {
 						</section>
 						<section className="prod-buttons">
 							<button className="prod-add-to-favorite">Add to favorites</button>
-							<button className="prod-buy">Buy</button>
+							<button
+								onClick={() => {
+									updateCartList(product[0]);
+								}}
+								className="prod-buy"
+							>
+								Buy
+							</button>
 						</section>
 					</section>
 				</section>
