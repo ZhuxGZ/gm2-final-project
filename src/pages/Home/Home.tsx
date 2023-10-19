@@ -1,4 +1,3 @@
-import { WhisList } from '../WishList';
 import './Home.css';
 
 export const Home = () => {
@@ -12,5 +11,5 @@ export const Home = () => {
 				<div className="featured-products-container"></div>
 			</div>
 		</div>
-	);
+  );
 };
