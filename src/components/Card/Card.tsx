@@ -16,9 +16,7 @@ export const Card = ({ props }: { props: Product }) => {
 					<div className="product-number-data">
 						<div className="prices">
 							<p className="original-price">${price}</p>
-							<p className="price-with-discount">
-								$ {calculateDiscount(price, discountPercentage)}
-							</p>
+							<p className="price-with-discount">${calculateDiscount(price, discountPercentage)}</p>
 							<p className="stock">Stock: {stock}</p>
 						</div>
 					</div>
