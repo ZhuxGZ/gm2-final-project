@@ -37,6 +37,11 @@ nav {
 	text-align: center;
 }
 
+.nav-item a {
+	color: white;
+	text-decoration: none;
+}
+
 .nav-item:hover {
 	color: gray;
 }
