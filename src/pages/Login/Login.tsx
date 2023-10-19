@@ -1,4 +1,4 @@
-import { SyntheticEvent, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useLoginStatus } from '../../hooks/LoginStatusContext';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
