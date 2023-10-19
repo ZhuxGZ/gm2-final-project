@@ -23,9 +23,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 	}, []);
 
 	useEffect(() => {
-		if (cartList.length) {
-			localStorage.setItem('cartList', JSON.stringify(cartList));
-		}
+		localStorage.setItem('cartList', JSON.stringify(cartList));
 	}, [cartList]);
 
 	const addCartList = (product: Product) => {
