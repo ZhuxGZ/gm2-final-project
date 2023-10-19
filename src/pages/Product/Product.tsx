@@ -5,7 +5,7 @@ import { calculateDiscount } from '../../utils';
 
 export const ProductPage = () => {
 	const { id } = useParams();
-	const { updateCartList } = useCart();
+	const { addCartList } = useCart();
 	const productList = useProducts();
 	const product: Product[] = productList.filter((product) => product.id === Number(id));
 
@@ -36,7 +36,7 @@ export const ProductPage = () => {
 							<button className="prod-add-to-favorite">Add to favorites</button>
 							<button
 								onClick={() => {
-									updateCartList(product[0]);
+									addCartList(product[0]);
 								}}
 								className="prod-buy"
 							>
