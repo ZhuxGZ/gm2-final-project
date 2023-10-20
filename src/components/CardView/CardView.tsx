@@ -1,17 +1,15 @@
-import "./CardView.css"
-import { Card } from "..";
-import { useProducts } from "../../hooks";
+import './CardView.css';
+import { Card } from '..';
+import { useProducts } from '../../hooks';
 
 export const CardView = () => {
-    const products = useProducts()
+    const products = useProducts();
 
-    console.log(products)
     return (
-        < div className="cards-container" >
+        <div className="cards-container">
             {products?.map((product) => {
-                return < Card props={product} />
-
+                return <Card key={product.id} props={product} />;
             })}
-        </div >
-    )
-}
+        </div>
+    );
+};

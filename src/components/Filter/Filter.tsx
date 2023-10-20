@@ -1,14 +1,20 @@
 import './Filter.css'
-export const Filter = () => {
-    return (
+import { useProducts } from '../../hooks';
 
+
+export const Filter = ({ setSearchText }) => {
+
+    function handleChange(event) {
+        setSearchText(event.target.value)
+    }
+    return (
         <div className='content-filter'>
             <div className='filter-title'>
                 <h2>Filters</h2>
             </div>
             <div className='filter-description container-filter filter-center'>
                 <h3>Name Descripton Brand</h3>
-                <input type="text" />
+                <input type="text" placeholder='Search' onChange={handleChange} />
             </div>
             <div className='filter-minprice container-filter filter-center'>
                 <h3>Min Price</h3>
