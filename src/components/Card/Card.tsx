@@ -1,12 +1,21 @@
+import { Link } from 'react-router-dom';
 import { Product, useCart } from '../../hooks';
 import { calculateDiscount } from '../../utils';
 import './Card.css';
 
-export const Card = ({ props, index }: { props: Product; index: number }) => {
-	const { title, price, discountPercentage, rating, stock, images } = props;
+export const Card = ({
+	props,
+	index,
+	section,
+}: {
+	props: Product;
+	index?: number;
+	section?: string;
+}) => {
+	const { id, title, price, discountPercentage, rating, stock, images } = props;
 	const { delCartList } = useCart();
 	return (
-		<>
+		<Link to={`/product/${id}`}>
 			<div className="structure-card">
 				<div className="img-rating-container">
 					<img className="card-img" src={images[0]} />
@@ -24,7 +33,10 @@ export const Card = ({ props, index }: { props: Product; index: number }) => {
 				</div>
 				<div className="card-buttons">
 					{index !== undefined ? (
-						<button className="buttons-container" onClick={() => delCartList(index)}>
+						<button
+							className="buttons-container"
+							onClick={() => (section === 'cart' ? delCartList : '')}
+						>
 							Remove
 						</button>
 					) : (
@@ -35,6 +47,6 @@ export const Card = ({ props, index }: { props: Product; index: number }) => {
 					)}
 				</div>
 			</div>
-		</>
+		</Link>
 	);
 };

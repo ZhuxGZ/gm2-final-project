@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Home, Login, Profile, ProductPage, Cart, Shop } from './pages';
+import { Home, Login, Profile, ProductPage, Cart, Shop, WhisList } from './pages';
 import { AppLayout } from './components';
 import { CartProvider, LoginStatusProvider, ProductsProvider } from './hooks';
 
@@ -18,12 +18,13 @@ function App() {
 								<Route path="/profile" element={<Profile />} />
 								<Route path="/cart" element={<Cart />} />
 								<Route path="/shop" element={<Shop />} />
+								<Route path="/wishList" element={<WhisList />} />
 							</Routes>
 						</AppLayout>
 					</CartProvider>
-				</ProductsProvider >
-			</LoginStatusProvider >
-		</BrowserRouter >
+				</ProductsProvider>
+			</LoginStatusProvider>
+		</BrowserRouter>
 	);
 }
 
