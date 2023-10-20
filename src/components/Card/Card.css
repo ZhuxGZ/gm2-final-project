@@ -45,6 +45,7 @@
 	align-self: flex-end;
 	margin-top: 1em;
 	gap: 0.4em;
+	max-width: 15em;
 }
 
 .product-name {

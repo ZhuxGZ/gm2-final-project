@@ -12,9 +12,10 @@ export const Cart = () => {
 				<button className="cart-buy">Buy</button>
 			</section>
 			<section className="cart-product-display">
-				{cartList.map((product, index) => {
-					return <Card key={product.id + index} props={product} index={index} />;
-				})}
+				{cartList &&
+					cartList.map((product, index) => {
+						return <Card key={product.id + index} props={product} index={index} />;
+					})}
 			</section>
 		</div>
 	);

@@ -1,0 +1,7 @@
+.shop-page {
+	width: 100%;
+	padding: 0 1em 0em 0em;
+	display: grid;
+	grid-template-columns: 25% 80%;
+	grid-area: 1em;
+}

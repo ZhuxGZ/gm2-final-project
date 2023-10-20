@@ -1,10 +1,11 @@
-import { CardView } from "../../components/CardView"
-import { Filter } from "../../components"
+import { CardView } from '../../components/CardView';
+import { Filter } from '../../components';
+import './Shop.css';
 export const Shop = () => {
-    return (
-        <>
-            <Filter />
-            <CardView />
-        </>
-    )
-}
+	return (
+		<section className="shop-page">
+			<Filter />
+			<CardView />
+		</section>
+	);
+};
