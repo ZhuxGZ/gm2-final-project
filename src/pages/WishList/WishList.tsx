@@ -15,9 +15,12 @@ export const WhisList = () => {
 
 	return (
 		<div className="wishList-content">
-			<button className="change-button" onClick={toggleView}>
-				Change View
-			</button>
+			<div className="wishlist-top">
+				<h1>Wishlist</h1>
+				<button className="change-button" onClick={toggleView}>
+					Change View
+				</button>
+			</div>
 			<div className="views-container">
 				{currentView === 'CardView' && (
 					<section className="cart-product-display">
