@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { Product, useCart, useProducts } from '../../hooks';
-import { calculateDiscount } from '../../utils';
 import './Product.css';
+import { calculateDiscount } from '../../utils';
 
 export const ProductPage = () => {
 	const { id } = useParams();
