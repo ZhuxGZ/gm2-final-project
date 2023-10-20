@@ -1,4 +1,3 @@
-import { ProductPage } from '..';
 import { Card } from '../../components';
 import { useProducts } from '../../hooks';
 import './Home.css';
