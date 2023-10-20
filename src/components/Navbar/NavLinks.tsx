@@ -11,12 +11,14 @@ export const NavLinks = () => {
 				<>
 					<li className="nav-item">Metrics</li>
 					<li className="nav-item">
-						<Link to="Cart">Cart</Link>
+						<Link to="/cart">Cart</Link>
 					</li>
 					<li className="nav-item">Whislist</li>
 				</>
 			)}
-			<li className="nav-item">Shop</li>
+			<li className="nav-item">
+				<Link to="/shop">Shop</Link>
+			</li>
 
 			<Link to={isLogged ? '/profile' : '/login'}>
 				<UserIcon />
