@@ -24,7 +24,9 @@ export const Card = ({ props, index }: { props: Product; index: number }) => {
 				</div>
 				<div className="card-buttons">
 					{index !== undefined ? (
-						<button onClick={() => delCartList(index)}>Remove</button>
+						<button className="buttons-container" onClick={() => delCartList(index)}>
+							Remove
+						</button>
 					) : (
 						<>
 							<button className="buttons-container">Wishlist</button>
