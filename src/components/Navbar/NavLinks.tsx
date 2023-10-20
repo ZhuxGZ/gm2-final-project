@@ -13,7 +13,9 @@ export const NavLinks = () => {
 					<li className="nav-item">
 						<Link to="/cart">Cart</Link>
 					</li>
-					<li className="nav-item">Whislist</li>
+					<li className="nav-item">
+						<Link to="/wishlist">Whislist</Link>
+					</li>
 				</>
 			)}
 			<li className="nav-item">

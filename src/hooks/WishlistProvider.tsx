@@ -8,8 +8,8 @@ type WishlistProvider = {
 	wishlist: Product[];
 };
 
-const CartContext = createContext({} as WishlistProvider);
-export const useWishlist = () => useContext(CartContext);
+const WishlistContext = createContext({} as WishlistProvider);
+export const useWishlist = () => useContext(WishlistContext);
 
 export const WishlistProvider = ({ children }: { children: ReactNode }) => {
 	const [wishlist, setWishlist] = useState<Product[]>([]);
@@ -18,7 +18,7 @@ export const WishlistProvider = ({ children }: { children: ReactNode }) => {
 	const localStorageCart = JSON.parse(localStorage.getItem('wishlist') as string);
 
 	useEffect(() => {
-		if (localStorageCart !== null) setCartList(localStorageCart);
+		if (localStorageCart !== null) setWishlist(localStorageCart);
 		console.log(wishlist);
 	}, []);
 
@@ -36,5 +36,19 @@ export const WishlistProvider = ({ children }: { children: ReactNode }) => {
 		}
 	};
 
-	return <CartContext.Provider value={{ addWishlist, wishlist }}>{children}</CartContext.Provider>;
+	const delWishlist = (index: number) => {
+		if (isLogged) {
+			const newWishlist = [...wishlist];
+			newWishlist.splice(index, 1);
+			setWishlist(newWishlist);
+		} else {
+			navigate('/login');
+		}
+	};
+
+	return (
+		<WishlistContext.Provider value={{ addWishlist, delWishlist, wishlist }}>
+			{children}
+		</WishlistContext.Provider>
+	);
 };

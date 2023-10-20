@@ -3,4 +3,6 @@ export * from './Navbar';
 export * from './Logo';
 export * from './UserIcon';
 export * from './Card';
-export * from "./Filter"
+export * from './Filter';
+export * from './CardView';
+export * from './Table';

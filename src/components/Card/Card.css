@@ -1,6 +1,7 @@
 a {
 	text-decoration: none;
 	color: black;
+	max-width: fit-content;
 }
 
 .structure-card {
@@ -48,7 +49,6 @@ a {
 
 .card-info {
 	align-self: flex-end;
-	margin-top: 1em;
 	gap: 0.4em;
 	max-width: 15em;
 }
