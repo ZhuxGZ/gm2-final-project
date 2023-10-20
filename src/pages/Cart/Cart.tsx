@@ -14,7 +14,7 @@ export const Cart = () => {
 			<section className="cart-product-display">
 				{cartList &&
 					cartList.map((product, index) => {
-						return <Card key={product.id + index} props={product} index={index} />;
+						return <Card key={product.id + index} props={product} index={index} section="cart" />;
 					})}
 			</section>
 		</div>

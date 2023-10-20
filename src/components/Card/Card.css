@@ -1,6 +1,13 @@
+a {
+	text-decoration: none;
+	color: black;
+	max-width: fit-content;
+}
+
 .structure-card {
 	box-sizing: border-box;
 	display: grid;
+	gap: 0.5em;
 	grid-template-rows: 45% 40% 15%;
 	width: 16em;
 	height: 25em;
@@ -43,7 +50,6 @@
 
 .card-info {
 	align-self: flex-end;
-	margin-top: 1em;
 	gap: 0.4em;
 	max-width: 15em;
 }
@@ -84,17 +90,17 @@
 }
 
 .card-buttons {
-	margin-top: 1em;
 	width: 15em;
+	margin-top: 1em;
 	height: fit-content;
 	display: flex;
 	justify-content: end;
-	align-self: flex-end;
+	align-items: flex-end;
+	gap: 0.2em;
 }
 
 .buttons-container {
 	height: 2em;
-	margin: 0.2em;
 	width: 30%;
 	background-color: #d9d9d9;
 	border: solid 0.1em black;

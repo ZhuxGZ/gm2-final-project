@@ -1,9 +1,9 @@
-import './CardView.css';
 import { Card } from '..';
+import './CardView.css';
 import { useProducts } from '../../hooks';
 
 export const CardView = () => {
-    const products = useProducts();
+    const products = useProducts();;
 
     return (
         <div className="cards-container">
