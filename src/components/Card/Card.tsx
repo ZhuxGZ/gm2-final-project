@@ -4,7 +4,7 @@ import './Card.css';
 
 export const Card = ({ props, index }: { props: Product; index: number }) => {
 	const { title, price, discountPercentage, rating, stock, images } = props;
-	const { delCartList } = useCart();
+	const { delCartList, addCartList } = useCart();
 	return (
 		<>
 			<div className="structure-card">
@@ -30,7 +30,9 @@ export const Card = ({ props, index }: { props: Product; index: number }) => {
 					) : (
 						<>
 							<button className="buttons-container">Wishlist</button>
-							<button className="buttons-container">Cart</button>
+							<button className="buttons-container" onClick={() => addCartList(props)}>
+								Cart
+							</button>
 						</>
 					)}
 				</div>
