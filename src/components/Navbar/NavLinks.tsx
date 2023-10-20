@@ -10,8 +10,10 @@ export const NavLinks = () => {
 			{isLogged && (
 				<>
 					<li className="nav-item">Metrics</li>
-					<li className="nav-item">Cart</li>
-					<li className="nav-item">Wishlist</li>
+					<li className="nav-item">
+						<Link to="Cart">Cart</Link>
+					</li>
+					<li className="nav-item">Whislist</li>
 				</>
 			)}
 			<li className="nav-item">Shop</li>

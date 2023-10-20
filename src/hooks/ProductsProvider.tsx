@@ -11,6 +11,7 @@ export interface Product {
 	brand: string;
 	category: string;
 	thumbnail: string;
+	stock: number;
 	images: string[];
 }
 
@@ -21,7 +22,7 @@ export interface FetchResponse {
 	limit: number;
 }
 
-const ProductsContext = createContext();
+const ProductsContext = createContext([] as Product[]);
 
 export const useProducts = () => {
 	return useContext(ProductsContext);

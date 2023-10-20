@@ -11,5 +11,5 @@ export const Home = () => {
 				<div className="featured-products-container"></div>
 			</div>
 		</div>
-	);
+  );
 };

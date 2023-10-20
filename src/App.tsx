@@ -1,26 +1,29 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Home, Login, Profile, Product, Shop } from './pages';
+import { Home, Login, Profile, ProductPage, Cart, Shop } from './pages';
 import { AppLayout } from './components';
-import { LoginStatusProvider, ProductsProvider } from './hooks';
+import { CartProvider, LoginStatusProvider, ProductsProvider } from './hooks';
 
 function App() {
 	return (
 		<BrowserRouter>
 			<LoginStatusProvider>
 				<ProductsProvider>
-					<AppLayout>
-						<Routes>
-							<Route path="/" element={<Home />} />
-							<Route path="/login" element={<Login />} />
-							<Route path="/product/:id" element={<Product />} />
-							<Route path="/profile" element={<Profile />} />
-							<Route path="/shop" element={<Shop />} />
-						</Routes>
-					</AppLayout>
-				</ProductsProvider>
-			</LoginStatusProvider>
-		</BrowserRouter>
+					<CartProvider>
+						<AppLayout>
+							<Routes>
+								<Route path="/" element={<Home />} />
+								<Route path="/login" element={<Login />} />
+								<Route path="/product/:id" element={<ProductPage />} />
+								<Route path="/profile" element={<Profile />} />
+								<Route path="/cart" element={<Cart />} />
+								<Route path="/shop" element={<Shop />} />
+							</Routes>
+						</AppLayout>
+					</CartProvider>
+				</ProductsProvider >
+			</LoginStatusProvider >
+		</BrowserRouter >
 	);
 }
 
