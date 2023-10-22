@@ -4,7 +4,7 @@ import { useProducts } from '../../hooks';
 
 export const Filter = ({ setSearchText }) => {
 
-    function handleChange(event) {
+    function handleSearch(event) {
         setSearchText(event.target.value)
     }
     return (
@@ -14,7 +14,7 @@ export const Filter = ({ setSearchText }) => {
             </div>
             <div className='filter-description container-filter filter-center'>
                 <h3>Name Descripton Brand</h3>
-                <input type="text" placeholder='Search' onChange={handleChange} />
+                <input type="text" placeholder='Search' onChange={handleSearch} />
             </div>
             <div className='filter-minprice container-filter filter-center'>
                 <h3>Min Price</h3>

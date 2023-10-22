@@ -1,15 +1,21 @@
-import { CardView } from '../../components/CardView';
-import { Filter } from '../../components';
-import { useState } from "react";
+    import './Shop.css';
+    import { useState } from "react";
+    import { Filter } from '../../components';
+    import { CardView } from '../../components/CardView';
+    import { useProducts } from '../../hooks';
 
-import './Shop.css';
-
-export const Shop = () => {
-    const [searchTerm, setSearchText] = useState([]);
-    return (
-        <section className="shop-page">
+    export const Shop = () => {
+        const [searchTerm, setSearchText] = useState([]);
+      
+        const products = useProducts();
+        const filteredProducts = products.filter((product) =>
+          product.name && searchTerm && product.name.includes(searchTerm)
+        );
+      
+        return (
+          <section className="shop-page">
             <Filter setSearchText={setSearchText} />
-            <CardView />
-        </section>
-    );
-};
+            <CardView product={filteredProducts} />
+          </section>
+        );
+      }; 

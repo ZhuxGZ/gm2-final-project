@@ -2,7 +2,7 @@ import { Card } from '..';
 import './CardView.css';
 import { useProducts } from '../../hooks';
 
-export const CardView = () => {
+export const CardView = ({filteredProducts}) => {
     const products = useProducts();;
 
     return (
