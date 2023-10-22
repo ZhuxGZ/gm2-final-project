@@ -1,22 +1,28 @@
-.wishList-content{
-    background-color: #D9D9D9;
+.wishList-content {
+	background-color: #d9d9d9;
+	padding: 1em;
 }
 
-.change-button{
-    margin-left: 90%;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    font-size: 1em;
-    padding: 0.35em;
-    border: solid 0.1em black;
-    border-radius: 1.5em;
-    transition: 0.5s;
+.wishlist-top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-bottom: 1em;
+	border-bottom: 2px solid grey;
 }
 
-.change-button:hover{
-    background-color: #F95B2E;
+.change-button {
+	font-size: 1em;
+	padding: 0.5em;
+	border: solid 0.1em black;
+	border-radius: 1.5em;
+	transition: 0.5s;
 }
 
-.views-container{
-    margin-top: 0em;
+.change-button:hover {
+	background-color: #f95b2e;
+}
+
+.views-container {
+	margin-top: 0em;
 }
