@@ -8,8 +8,10 @@ export const Shop = () => {
 	const [searchTerm, setSearchText] = useState<string>('');
 
 	const products = useProducts();
-	const filteredProducts = products.filter((product) =>
-		product.title.toLowerCase().includes(searchTerm.toLowerCase())
+	const filteredProducts = products.filter(
+		(product) =>
+			product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+			product.brand.toLowerCase().includes(searchTerm.toLowerCase())
 	);
 
 	console.log(filteredProducts);
