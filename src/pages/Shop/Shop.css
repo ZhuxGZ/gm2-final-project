@@ -1,7 +1,6 @@
 .shop-page {
 	padding: 0 1em 2em 0em;
-	display: grid;
-	grid-template-columns: 25% 73%;
+	display: flex;
 }
 
 .content-filter {

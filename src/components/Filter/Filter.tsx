@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Filter.css';
 import { useProducts } from '../../hooks';
 
-export const Filter = ({ setSearchText, setPriceMinMax, setCategory }) => {
+export const Filter = ({ setSearchText, setPriceMinMax, setCategory, state }) => {
 	const [minPrice, setMinPrice] = useState(0);
 	const [maxPrice, setMaxPrice] = useState(2000);
 	const { productCategories } = useProducts();
