@@ -1,5 +1,4 @@
 import { useState, useEffect, useContext, createContext, ReactNode } from 'react';
-import { Product } from '../pages';
 
 export interface Product {
 	id: number;

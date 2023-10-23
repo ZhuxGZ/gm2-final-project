@@ -3,3 +3,7 @@
 	display: grid;
 	grid-template-columns: 25% 73%;
 }
+
+.content-filter {
+	min-height: 90vh;
+}

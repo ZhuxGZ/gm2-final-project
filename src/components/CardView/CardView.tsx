@@ -1,15 +1,13 @@
 import { Card } from '..';
 import './CardView.css';
-import { useProducts } from '../../hooks';
+import { Product } from '../../hooks';
 
-export const CardView = ({filteredProducts}) => {
-    const products = useProducts();;
-
-    return (
-        <div className="cards-container">
-            {products?.map((product) => {
-                return <Card key={product.id} props={product} />;
-            })}
-        </div>
-    );
+export const CardView = ({ filteredProducts }: { filteredProducts: Product[] }) => {
+	return (
+		<div className="cards-container">
+			{filteredProducts?.map((product) => {
+				return <Card key={product.id} props={product} />;
+			})}
+		</div>
+	);
 };
