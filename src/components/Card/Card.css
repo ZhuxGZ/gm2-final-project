@@ -1,39 +1,30 @@
-a {
+.img-rating-container a {
 	text-decoration: none;
 	color: black;
-	max-width: fit-content;
+	width: 15em;
+	display: block;
 }
 
 .structure-card {
-	box-sizing: border-box;
 	display: grid;
 	gap: 0.5em;
 	grid-template-rows: 42.5% 42.5% 15%;
-	width: 16em;
-	height: 25em;
+	width: 15em;
 	border-radius: 0.75em;
 	background-color: #f95b2e;
 	padding: 0.7em;
-	transition: transform linear 0.2s;
-}
-
-.structure-card:hover {
-	transform: scale(1.01);
 }
 
 .img-rating-container {
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-	width: 15em;
 	position: relative;
+	width: 100%;
+	object-fit: cover;
+	object-position: center;
 }
 
 .card-img {
-	height: 100%;
+	width: 100%;
 	border-radius: 0.75em;
-	max-width: 15em;
-	max-height: 200px;
 }
 
 .card-rating {
@@ -59,8 +50,7 @@ a {
 	height: 27px;
 	overflow: hidden;
 	font-size: 1.5em;
-	font-family: sans-serif;
-	font-weight: 800;
+	font-weight: bold;
 	margin-bottom: 0.5em;
 }
 
