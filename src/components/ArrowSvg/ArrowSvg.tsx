@@ -1,5 +1,5 @@
 export const ArrowSvg = () => (
-	<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+	<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="2em">
 		<path
 			stroke="#000"
 			strokeLinecap="round"

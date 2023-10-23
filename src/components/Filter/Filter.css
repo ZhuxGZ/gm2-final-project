@@ -1,36 +1,64 @@
 .content-filter {
-	padding: 1.5em 0;
+	text-align: start;
+	display: none;
+	padding: 1.5em 0.5em;
 	background-color: #b6b6b6;
-	width: 0;
 	gap: 0.5em;
-	width: fit-content;
 	font-size: small;
+}
+
+.container-filter svg {
+	transform: rotate(180deg);
+}
+
+.open-filter {
+	display: grid;
+	width: 100%;
+	place-content: start;
+	justify-content: center;
 	position: absolute;
 	z-index: 11;
+	overflow: hidden;
+	height: 100vh;
+}
+
+.open-filter p {
+	text-align: start;
+	z-index: 1000;
+	position: absolute;
+	right: 30px;
+	top: 10px;
+}
+
+.open-filter svg {
+	transform: rotate(0);
+}
+
+.container-filter {
+	text-align: start;
+	padding: 1.5em 0.5em;
+	background-color: #b6b6b6;
+	z-index: 10 !important;
 }
 
 .filter-description {
 	display: flex;
 	gap: 1em;
-	padding: 0 1em 1em 1em;
 }
 
 .filter-minprice {
 	display: flex;
-	gap: 4em;
-	padding: 0 1em 1em 1em;
+	gap: 1em;
 }
 
 .filter-maxprice {
 	display: flex;
-	gap: 3.8em;
-	padding: 0 1em 1em 1em;
+	gap: 1em;
 }
 
 .filter-categories {
 	display: flex;
-	gap: 2.8em;
-	padding: 0 1em 1em 1em;
+	gap: 1em;
 }
 
 .filter-title {
@@ -64,8 +92,13 @@ select {
 }
 
 @media screen and (min-width: 1200px) {
+	.container-filter svg {
+		display: none;
+	}
+
 	.content-filter {
-		width: 20%;
+		display: grid;
+		place-content: start;
 		position: static;
 		z-index: auto;
 	}
