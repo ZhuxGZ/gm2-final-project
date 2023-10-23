@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Product, useCart, useProducts } from '../../hooks';
 import './Product.css';
 import { calculateDiscount } from '../../utils';
@@ -8,9 +8,13 @@ export const ProductPage = () => {
 	const { addCartList } = useCart();
 	const productList = useProducts();
 	const product: Product[] = productList.filter((product) => product.id === Number(id));
+	const navigate = useNavigate();
 
 	return (
 		<section className="prod-page">
+			<button className="prod-go-back" onClick={() => navigate('/shop')}>
+				Go Back
+			</button>
 			<section className="prod-container">
 				<section className="prod-images">
 					<section className="prod-main-image">
