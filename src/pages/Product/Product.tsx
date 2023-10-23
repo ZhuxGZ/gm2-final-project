@@ -44,7 +44,7 @@ export const ProductPage = () => {
 								}}
 								className="prod-buy"
 							>
-								Buy
+								Add to cart
 							</button>
 						</section>
 					</section>
