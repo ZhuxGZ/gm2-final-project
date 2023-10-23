@@ -1,3 +1,7 @@
+.no-scroll {
+	overflow: hidden;
+}
+
 .content-filter {
 	text-align: start;
 	display: none;
@@ -5,6 +9,7 @@
 	background-color: #b6b6b6;
 	gap: 0.5em;
 	font-size: small;
+	height: 100vh;
 }
 
 .container-filter svg {
@@ -12,14 +17,17 @@
 }
 
 .open-filter {
+	box-sizing: border-box;
 	display: grid;
 	width: 100%;
 	place-content: start;
 	justify-content: center;
 	position: absolute;
 	z-index: 11;
+}
+
+.open-filter * {
 	overflow: hidden;
-	height: 100vh;
 }
 
 .open-filter p {
@@ -62,9 +70,7 @@
 }
 
 .filter-title {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	text-align: center;
 }
 
 .filter-center {

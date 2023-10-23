@@ -8,6 +8,7 @@ export const Filter = ({ setSearchText, setPriceMinMax, setCategory }) => {
 	const [maxPrice, setMaxPrice] = useState(2000);
 	const [state, setState] = useState(false);
 	const { productCategories } = useProducts();
+	const body = document.querySelector('body');
 
 	function handleSearch(event) {
 		setSearchText(event.target.value);
@@ -16,6 +17,12 @@ export const Filter = ({ setSearchText, setPriceMinMax, setCategory }) => {
 	const handlePriceQuantity = () => {
 		setPriceMinMax({ min: minPrice, max: maxPrice });
 	};
+
+	if (state) {
+		body?.classList.add('no-scroll');
+	} else {
+		body?.classList.remove('no-scroll');
+	}
 
 	return (
 		<div className={`container-filter ${state && 'open-filter'}`}>
