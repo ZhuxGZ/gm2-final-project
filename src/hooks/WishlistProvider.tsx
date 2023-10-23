@@ -27,6 +27,7 @@ export const WishlistProvider = ({ children }: { children: ReactNode }) => {
 	}, [wishlist]);
 
 	const addWishlist = (product: Product) => {
+		if (wishlist.includes(product)) return;
 		if (isLogged) {
 			const newWishlist = [...wishlist];
 			newWishlist.push(product);
