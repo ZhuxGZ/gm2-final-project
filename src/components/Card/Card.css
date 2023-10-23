@@ -8,7 +8,7 @@ a {
 	box-sizing: border-box;
 	display: grid;
 	gap: 0.5em;
-	grid-template-rows: 45% 40% 15%;
+	grid-template-rows: 42.5% 42.5% 15%;
 	width: 16em;
 	height: 25em;
 	border-radius: 0.75em;
@@ -56,6 +56,8 @@ a {
 
 .product-name {
 	width: 10em;
+	height: 27px;
+	overflow: hidden;
 	font-size: 1.5em;
 	font-family: sans-serif;
 	font-weight: 800;

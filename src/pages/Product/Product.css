@@ -76,10 +76,21 @@
 	background: #e3cb52;
 }
 
+.prod-go-back {
+	width: 6em;
+	padding: 0.3em;
+	background-color: grey;
+	border: none;
+	border-radius: 0.5em;
+	color: #d9d9d9;
+	font-weight: bold;
+}
+
 @media screen and (min-width: 720px) {
 	.prod-page {
 		gap: 2em;
-		height: 100vh;
+		height: 90vh;
+		justify-content: center;
 		align-items: center;
 	}
 
