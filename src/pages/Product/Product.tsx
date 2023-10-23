@@ -6,8 +6,8 @@ import { calculateDiscount } from '../../utils';
 export const ProductPage = () => {
 	const { id } = useParams();
 	const { addCartList } = useCart();
-	const productList = useProducts();
-	const product: Product[] = productList.filter((product) => product.id === Number(id));
+	const { products } = useProducts();
+	const product: Product[] = products.filter((product) => product.id === Number(id));
 	const navigate = useNavigate();
 
 	return (

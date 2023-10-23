@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import './Filter.css';
+import { useProducts } from '../../hooks';
 
-export const Filter = ({ setSearchText, setPriceMinMax }) => {
+export const Filter = ({ setSearchText, setPriceMinMax, setCategory }) => {
 	const [minPrice, setMinPrice] = useState(0);
 	const [maxPrice, setMaxPrice] = useState(2000);
+	const { productCategories } = useProducts();
 
 	function handleSearch(event) {
 		setSearchText(event.target.value);
@@ -50,9 +52,15 @@ export const Filter = ({ setSearchText, setPriceMinMax }) => {
 			</div>
 			<div className="filter-categories container-filter filter-center">
 				<h3>Categories</h3>
-				<select name="" id="">
-					<option value="">hola</option>
-					<option value="">mundo</option>
+				<select name="" id="" onChange={(event) => setCategory(event.target.value)}>
+					<option value="">All</option>
+					{productCategories.map((category) => {
+						return (
+							<option key={category} value={category}>
+								{category}
+							</option>
+						);
+					})}
 				</select>
 			</div>
 		</div>
