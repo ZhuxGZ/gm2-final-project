@@ -3,7 +3,7 @@ import { useProducts } from '../../hooks';
 import './Home.css';
 
 export const Home = () => {
-	const products = useProducts();
+	const { products } = useProducts();
 	return (
 		<div className="home-structure">
 			<img
@@ -21,7 +21,7 @@ export const Home = () => {
 					{products &&
 						products.map((product) => {
 							if (product.rating >= 4.9) {
-								return <Card props={product} />;
+								return <Card key={product.id} props={product} />;
 							}
 						})}
 				</div>
