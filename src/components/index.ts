@@ -6,3 +6,4 @@ export * from './Card';
 export * from './Filter';
 export * from './CardView';
 export * from './Table';
+export * from './ArrowSvg';
