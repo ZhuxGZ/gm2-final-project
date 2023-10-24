@@ -2,6 +2,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Product, useCart, useProducts } from '../../hooks';
 import './Product.css';
 import { calculateDiscount } from '../../utils';
+import { ArrowSvg } from '../../components';
 
 export const ProductPage = () => {
 	const { id } = useParams();
@@ -13,7 +14,7 @@ export const ProductPage = () => {
 	return (
 		<section className="prod-page">
 			<button className="prod-go-back" onClick={() => navigate('/shop')}>
-				Go Back
+				<ArrowSvg /> Shop
 			</button>
 			<section className="prod-container">
 				<section className="prod-images">
