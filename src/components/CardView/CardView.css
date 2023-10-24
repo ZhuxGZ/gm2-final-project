@@ -6,6 +6,6 @@
 	height: fit-content;
 	grid-template-columns: repeat(auto-fit, 16em);
 	gap: 1.5em;
-	row-gap: 2em;
+
 	padding: 1em;
 }
