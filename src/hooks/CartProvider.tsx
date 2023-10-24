@@ -1,6 +1,7 @@
 import { ReactNode, createContext, useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Product, useLoginStatus } from '.';
+import { toast } from 'sonner';
 
 type CartProvider = {
 	addCartList: (product: Product) => void;
@@ -31,6 +32,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 			const newCartList = [...cartList];
 			newCartList.push(product);
 			setCartList(newCartList);
+			toast.success('Product added to your cart');
 		} else {
 			navigate('/login');
 		}
@@ -41,6 +43,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 			const newCartList = [...cartList];
 			newCartList.splice(index, 1);
 			setCartList(newCartList);
+			toast.error('Product removed from your cart');
 		} else {
 			navigate('/login');
 		}
