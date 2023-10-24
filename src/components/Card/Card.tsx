@@ -9,7 +9,7 @@ export const Card = ({
 	section,
 }: {
 	props: Product;
-	index?: number;
+	index: number;
 	section?: string;
 }) => {
 	const { id, title, price, discountPercentage, rating, stock, images } = props;
@@ -36,7 +36,7 @@ export const Card = ({
 			</div>
 
 			<div className="card-buttons">
-				{index !== undefined ? (
+				{section === 'cart' || section === 'wishlist' ? (
 					<button
 						className="buttons-container"
 						onClick={() => (section === 'cart' ? delCartList(index) : delWishlist(index))}

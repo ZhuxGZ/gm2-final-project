@@ -1,5 +1,5 @@
 import { useCart } from '../../hooks';
-import { Card } from '../../components';
+import { CardView } from '../../components';
 import './Cart.css';
 import { calculateDiscount } from '../../utils';
 import { useEffect, useState } from 'react';
@@ -25,10 +25,7 @@ export const Cart = () => {
 				<button className="cart-buy">Buy</button>
 			</section>
 			<section className="cart-product-display">
-				{cartList &&
-					cartList.map((product, index) => {
-						return <Card key={product.id + index} props={product} index={index} section="cart" />;
-					})}
+				<CardView products={cartList} section="cart" />
 			</section>
 		</div>
 	);

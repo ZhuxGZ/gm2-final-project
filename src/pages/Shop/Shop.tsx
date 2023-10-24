@@ -28,7 +28,7 @@ export const Shop = () => {
 				setPriceMinMax={setPriceMinMax}
 				setCategory={setCategory}
 			/>
-			<CardView filteredProducts={filteredProducts} />
+			<CardView products={filteredProducts} />
 		</section>
 	);
 };
