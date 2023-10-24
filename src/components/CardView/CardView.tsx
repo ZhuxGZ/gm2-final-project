@@ -2,11 +2,20 @@ import { Card } from '..';
 import './CardView.css';
 import { Product } from '../../hooks';
 
-export const CardView = ({ filteredProducts }: { filteredProducts: Product[] }) => {
+const SECTIONS = {
+	wishlist: 'wishlist',
+	cart: 'cart',
+};
+
+export type Sections = keyof typeof SECTIONS | undefined;
+
+export const CardView = ({ products, section }: { products: Product[]; section?: Sections }) => {
 	return (
 		<div className="cards-container">
-			{filteredProducts?.map((product) => {
-				return <Card key={product.id} props={product} />;
+			{products?.map((product, index) => {
+				return (
+					<Card key={`${product.id}.${index}`} index={index} props={product} section={section} />
+				);
 			})}
 		</div>
 	);
