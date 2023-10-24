@@ -1,5 +1,6 @@
 .cards-container {
 	display: grid;
+	place-content: center;
 	width: 100%;
 	grid-template-columns: repeat(auto-fit, 15em);
 	gap: 1.5em;
