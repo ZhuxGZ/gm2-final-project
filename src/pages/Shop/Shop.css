@@ -1,9 +1,4 @@
 .shop-page {
-	padding: 0 1em 2em 0em;
-	display: grid;
-	grid-template-columns: 25% 73%;
-}
-
-.content-filter {
-	min-height: 90vh;
+	box-sizing: border-box;
+	display: flex;
 }
