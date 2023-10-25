@@ -45,3 +45,17 @@ nav {
 .nav-item:hover {
 	color: gray;
 }
+
+.nav-cart {
+	position: relative;
+}
+
+.nav-cartQuantity {
+	position: absolute;
+	background-color: brown;
+	border-radius: 50%;
+	width: 1em;
+	padding: 0.2em;
+	font-size: 12px;
+	right: -5px;
+}

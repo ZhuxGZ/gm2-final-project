@@ -6,6 +6,7 @@ import { toast } from 'sonner';
 type CartProvider = {
 	addCartList: (product: Product) => void;
 	delCartList: (index: number) => void;
+	cartQuantity: number;
 	cartList: Product[];
 };
 
@@ -15,6 +16,7 @@ export const useCart = () => useContext(CartContext);
 export const CartProvider = ({ children }: { children: ReactNode }) => {
 	const [cartList, setCartList] = useState<Product[]>([]);
 	const { isLogged } = useLoginStatus();
+	const cartQuantity = cartList.length;
 	const navigate = useNavigate();
 	const localStorageCart = JSON.parse(localStorage.getItem('cartList') as string);
 
@@ -50,7 +52,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 	};
 
 	return (
-		<CartContext.Provider value={{ cartList, addCartList, delCartList }}>
+		<CartContext.Provider value={{ cartList, addCartList, delCartList, cartQuantity }}>
 			{children}
 		</CartContext.Provider>
 	);
