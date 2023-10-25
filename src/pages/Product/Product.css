@@ -2,12 +2,13 @@
 	box-sizing: border-box;
 	padding: 1em;
 	display: grid;
+	place-content: center;
 }
 
 .prod-main-image {
+	margin-top: 1em;
 	border-radius: 1em;
-	width: 100%;
-	height: 25em;
+	max-width: 100%;
 	object-fit: contain;
 	object-position: center;
 }
@@ -15,12 +16,14 @@
 .prod-all-image {
 	margin-top: 0.5em;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	gap: 1em;
 }
 
 .all-image-image {
 	background-color: grey;
+	max-width: 100%;
 	width: 5em;
 	height: 5em;
 	border-radius: 0.3em;
@@ -77,13 +80,29 @@
 }
 
 .prod-go-back {
-	width: 6em;
-	padding: 0.3em;
-	background-color: grey;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+	height: 2em;
+	width: 25%;
+	background-color: #f95b2e;
 	border: none;
 	border-radius: 0.5em;
-	color: #d9d9d9;
-	font-weight: bold;
+	transition: all linear 0.2s;
+}
+
+.prod-go-back {
+	transition: stroke linear 0.2s;
+}
+
+.prod-go-back:hover {
+	background-color: black;
+	color: #f95b2e;
+}
+
+.prod-go-back:hover svg {
+	stroke: #f95b2e !important;
 }
 
 @media screen and (min-width: 720px) {

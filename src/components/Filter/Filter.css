@@ -1,40 +1,76 @@
+.no-scroll {
+	overflow: hidden;
+}
+
 .content-filter {
-	padding: 1.5em 0;
-	width: 100%;
-	height: 100%;
+	text-align: start;
+	display: none;
+	padding: 1.5em 0.5em;
 	background-color: #b6b6b6;
 	gap: 0.5em;
 	font-size: small;
+	height: 100vh;
+}
+
+.container-filter svg {
+	transform: rotate(180deg);
+}
+
+.open-filter {
+	box-sizing: border-box;
+	display: grid;
+	width: 100%;
+	place-content: start;
+	justify-content: center;
+	position: absolute;
+	z-index: 11;
+}
+
+.open-filter * {
+	overflow: hidden;
+}
+
+.open-filter p {
+	text-align: start;
+	z-index: 1000;
+	position: absolute;
+	right: 30px;
+	top: 10px;
+}
+
+.open-filter svg {
+	transform: rotate(0);
+}
+
+.container-filter {
+	text-align: start;
+	padding: 1.5em 0.5em;
+	background-color: #b6b6b6;
+	z-index: 10 !important;
 }
 
 .filter-description {
 	display: flex;
 	gap: 1em;
-	padding: 0 1em 1em 1em;
 }
 
 .filter-minprice {
 	display: flex;
-	gap: 4em;
-	padding: 0 1em 1em 1em;
+	gap: 1em;
 }
 
 .filter-maxprice {
 	display: flex;
-	gap: 3.8em;
-	padding: 0 1em 1em 1em;
+	gap: 1em;
 }
 
 .filter-categories {
 	display: flex;
-	gap: 2.8em;
-	padding: 0 1em 1em 1em;
+	gap: 1em;
 }
 
 .filter-title {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	text-align: center;
 }
 
 .filter-center {
@@ -42,18 +78,34 @@
 }
 
 input {
-	max-width: 100%;
+	width: 100%;
 	height: 20%;
+	padding: 0.15em;
 	outline: none;
+	border: none;
+	border-radius: 0.2em;
 }
 
 input[type='range'] {
 	background: transparent;
 	accent-color: #f95b2e;
-	width: 10em;
+	width: 100%;
 }
 
 select {
 	width: 100%;
 	outline: none;
+}
+
+@media screen and (min-width: 1200px) {
+	.container-filter svg {
+		display: none;
+	}
+
+	.content-filter {
+		display: grid;
+		place-content: start;
+		position: static;
+		z-index: auto;
+	}
 }

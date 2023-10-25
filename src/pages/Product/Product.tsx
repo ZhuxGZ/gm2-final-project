@@ -2,18 +2,19 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Product, useCart, useProducts } from '../../hooks';
 import './Product.css';
 import { calculateDiscount } from '../../utils';
+import { ArrowSvg } from '../../components';
 
 export const ProductPage = () => {
 	const { id } = useParams();
 	const { addCartList } = useCart();
-	const productList = useProducts();
-	const product: Product[] = productList.filter((product) => product.id === Number(id));
+	const { products } = useProducts();
+	const product: Product[] = products.filter((product) => product.id === Number(id));
 	const navigate = useNavigate();
 
 	return (
 		<section className="prod-page">
 			<button className="prod-go-back" onClick={() => navigate('/shop')}>
-				Go Back
+				<ArrowSvg /> Shop
 			</button>
 			<section className="prod-container">
 				<section className="prod-images">
@@ -44,7 +45,7 @@ export const ProductPage = () => {
 								}}
 								className="prod-buy"
 							>
-								Buy
+								Add to cart
 							</button>
 						</section>
 					</section>

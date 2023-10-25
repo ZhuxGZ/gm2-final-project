@@ -21,7 +21,12 @@ export interface FetchResponse {
 	limit: number;
 }
 
-const ProductsContext = createContext([] as Product[]);
+interface ProductContext {
+	products: Product[];
+	productCategories: string[];
+}
+
+const ProductsContext = createContext({} as ProductContext);
 
 export const useProducts = () => {
 	return useContext(ProductsContext);
@@ -33,6 +38,9 @@ interface ProductsProviderProps {
 
 export const ProductsProvider = ({ children }: ProductsProviderProps) => {
 	const [products, setProducts] = useState<Product[]>([]);
+	const productCategories = Array.from(new Set(products.map((product) => product.category).flat()));
+
+	console.log(productCategories);
 
 	useEffect(() => {
 		fetch('https://dummyjson.com/products')
@@ -40,5 +48,9 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
 			.then((data) => setProducts(data.products));
 	}, []);
 
-	return <ProductsContext.Provider value={products}>{children}</ProductsContext.Provider>;
+	return (
+		<ProductsContext.Provider value={{ products, productCategories }}>
+			{children}
+		</ProductsContext.Provider>
+	);
 };

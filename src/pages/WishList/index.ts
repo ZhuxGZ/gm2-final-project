@@ -1,1 +1,1 @@
-export { WhisList } from "./WishList"
+export { WishList } from './WishList';

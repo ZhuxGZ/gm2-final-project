@@ -1,39 +1,32 @@
-a {
+.img-rating-container a {
 	text-decoration: none;
 	color: black;
-	max-width: fit-content;
+	width: 15em;
+	display: block;
 }
 
 .structure-card {
-	box-sizing: border-box;
 	display: grid;
-	gap: 0.5em;
+	box-sizing: border-box;
+	gap: 0.2em;
 	grid-template-rows: 42.5% 42.5% 15%;
 	width: 16em;
-	height: 25em;
+	height: 100%;
+	padding: 0.5em;
 	border-radius: 0.75em;
 	background-color: #f95b2e;
-	padding: 0.7em;
-	transition: transform linear 0.2s;
-}
-
-.structure-card:hover {
-	transform: scale(1.01);
 }
 
 .img-rating-container {
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-	width: 15em;
 	position: relative;
 }
 
 .card-img {
-	height: 100%;
-	border-radius: 0.75em;
-	max-width: 15em;
-	max-height: 200px;
+	width: 100%;
+	aspect-ratio: 1;
+	object-fit: cover;
+	object-position: center;
+	border-radius: 0.5em;
 }
 
 .card-rating {
@@ -49,18 +42,17 @@ a {
 }
 
 .card-info {
+	margin-top: 1em;
 	align-self: flex-end;
 	gap: 0.4em;
 	max-width: 15em;
 }
 
 .product-name {
+	align-self: flex-start;
 	width: 10em;
-	height: 27px;
-	overflow: hidden;
 	font-size: 1.5em;
-	font-family: sans-serif;
-	font-weight: 800;
+	font-weight: bold;
 	margin-bottom: 0.5em;
 }
 
@@ -93,7 +85,7 @@ a {
 
 .card-buttons {
 	width: 15em;
-	margin-top: 1em;
+	margin-top: 2em;
 	height: fit-content;
 	display: flex;
 	justify-content: end;
@@ -105,7 +97,7 @@ a {
 	height: 2em;
 	width: 30%;
 	background-color: #d9d9d9;
-	border: solid 0.1em black;
+	border: none;
 	border-radius: 0.5em;
 	transition: all linear 0.2s;
 }
@@ -113,5 +105,4 @@ a {
 .buttons-container:hover {
 	background-color: black;
 	color: #f95b2e;
-	border: solid 0.1em #d9d9d9;
 }

@@ -1,6 +1,7 @@
 import { ReactNode, createContext, useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Product, useLoginStatus } from '.';
+import { toast } from 'sonner';
 
 type WishlistProvider = {
 	addWishlist: (product: Product) => void;
@@ -27,10 +28,15 @@ export const WishlistProvider = ({ children }: { children: ReactNode }) => {
 	}, [wishlist]);
 
 	const addWishlist = (product: Product) => {
+		if (wishlist.includes(product)) {
+			toast.error('This product is already on your wishlist');
+			return;
+		}
 		if (isLogged) {
 			const newWishlist = [...wishlist];
 			newWishlist.push(product);
 			setWishlist(newWishlist);
+			toast.success('Added to your wishlist');
 		} else {
 			navigate('/login');
 		}
@@ -41,6 +47,7 @@ export const WishlistProvider = ({ children }: { children: ReactNode }) => {
 			const newWishlist = [...wishlist];
 			newWishlist.splice(index, 1);
 			setWishlist(newWishlist);
+			toast.error('Product deleted from your wishlist');
 		} else {
 			navigate('/login');
 		}

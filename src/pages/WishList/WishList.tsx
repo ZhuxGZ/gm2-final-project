@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Card, Table } from '../../components/';
+import { CardView, Table } from '../../components/';
 import './WishList.css';
 import { useWishlist } from '../../hooks';
 
-export const WhisList = () => {
+export const WishList = () => {
 	const [currentView, setCurrentView] = useState('CardView');
 	const { wishlist } = useWishlist();
 
@@ -22,16 +22,7 @@ export const WhisList = () => {
 				</button>
 			</div>
 			<div className="views-container">
-				{currentView === 'CardView' && (
-					<section className="cart-product-display">
-						{wishlist &&
-							wishlist.map((product, index) => {
-								return (
-									<Card key={product.id + index} props={product} index={index} section="wishist" />
-								);
-							})}
-					</section>
-				)}
+				{currentView === 'CardView' && <CardView products={wishlist} section="wishlist" />}
 				{currentView === 'Table' && <Table />}
 			</div>
 		</div>
