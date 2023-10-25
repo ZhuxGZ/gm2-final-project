@@ -3,7 +3,7 @@ import { CardView, Table } from '../../components/';
 import './WishList.css';
 import { useWishlist } from '../../hooks';
 
-export const WhisList = () => {
+export const WishList = () => {
 	const [currentView, setCurrentView] = useState('CardView');
 	const { wishlist } = useWishlist();
 
