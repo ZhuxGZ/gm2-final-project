@@ -1,10 +1,22 @@
+import { useState } from 'react';
 import { useEffect } from 'react';
 import { useLoginStatus } from '../../hooks/LoginStatusContext';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
 export const Login = () => {
+	let [firstView, setFirstView] = useState(0);
 	const { getUserData, isLogged } = useLoginStatus();
-	const navigate = useNavigate();
+	const [loginError, setLoginError] = useState(false);
+	const navigate = useNavigate()
+
+	console.log(firstView, loginError)
+
+	useEffect(() => {
+		if (firstView) {
+			setLoginError(true);
+			console.log("here")
+		}
+	}, [firstView])
 
 	useEffect(() => {
 		if (isLogged) {
@@ -15,6 +27,9 @@ export const Login = () => {
 	return (
 		<div className="mainContent">
 			<div className="container">
+				{loginError && (
+					<p className="error-message">Credenciales incorrectas. Verifica tus datos.</p>
+				)}
 				<div>
 					<img
 						className="img-login"
@@ -30,6 +45,7 @@ export const Login = () => {
 						const username = inputs[0].value;
 						const password = inputs[1].value;
 						getUserData(username, password);
+						setFirstView(firstView + 1)
 					}}
 				>
 					<input id="username" type="text" placeholder="Username" />
