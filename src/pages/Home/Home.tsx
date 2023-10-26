@@ -4,6 +4,7 @@ import './Home.css';
 
 export const Home = () => {
 	const { products } = useProducts();
+	let featuredLength = 0;
 	return (
 		<div className="home-structure">
 			<img
@@ -19,7 +20,8 @@ export const Home = () => {
 				<h3 className="featured-products-title">Featured products</h3>
 				<div className="featured-products-display">
 					{products?.map((product, index) => {
-						if (product.rating >= 4.9) {
+						if (product.rating >= 4.9 && featuredLength < 2) {
+							featuredLength++;
 							return <Card key={product.id} props={product} index={index} />;
 						}
 					})}
