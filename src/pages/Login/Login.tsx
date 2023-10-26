@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useLoginStatus } from '../../hooks/LoginStatusContext';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
+
 export const Login = () => {
 	let [firstView, setFirstView] = useState(0);
 	const { getUserData, isLogged } = useLoginStatus();
@@ -27,9 +28,6 @@ export const Login = () => {
 	return (
 		<div className="mainContent">
 			<div className="container">
-				{loginError && (
-					<p className="error-message">Credenciales incorrectas. Verifica tus datos.</p>
-				)}
 				<div>
 					<img
 						className="img-login"
@@ -48,6 +46,9 @@ export const Login = () => {
 						setFirstView(firstView + 1)
 					}}
 				>
+					{loginError && (
+						<p className="login-error-message">Credenciales incorrectas. Verifica tus datos.</p>
+					)}
 					<input id="username" type="text" placeholder="Username" />
 					<input id="password" type="password" placeholder="Password" />
 					<button id="login" type="submit">
