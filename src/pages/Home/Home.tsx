@@ -18,12 +18,11 @@ export const Home = () => {
 			<div className="home-featured-products">
 				<h3 className="featured-products-title">Featured products</h3>
 				<div className="featured-products-display">
-					{products &&
-						products.map((product) => {
-							if (product.rating >= 4.9) {
-								return <Card key={product.id} props={product} />;
-							}
-						})}
+					{products?.map((product, index) => {
+						if (product.rating >= 4.9) {
+							return <Card key={product.id} props={product} index={index} />;
+						}
+					})}
 				</div>
 			</div>
 		</div>
