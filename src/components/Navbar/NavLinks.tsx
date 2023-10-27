@@ -40,7 +40,7 @@ export const NavLinks = (props) => {
 			<ul className="user-menu">
 				{isLogged && (
 					<button className="burger-menu" onClick={handleClick}>
-						<BurgerMenuSvg open={false} />
+						<BurgerMenuSvg open={menuState} />
 					</button>
 				)}
 				<Link to={isLogged ? '/profile' : '/login'}>

@@ -111,6 +111,12 @@ nav.nav-open {
 	nav {
 		grid-template-columns: 55% 35% 10%;
 	}
+
+	nav.nav-open {
+		height: 2em;
+		grid-template-rows: 100%;
+	}
+
 	.burger-menu {
 		display: none;
 	}
@@ -121,6 +127,13 @@ nav.nav-open {
 		align-items: center;
 		gap: 1em;
 		color: white;
+	}
+
+	.nav-open .nav-list {
+		margin-top: 0em;
+		grid-area: 1/2;
+		align-items: center;
+		justify-content: flex-end;
 	}
 
 	.nav-cart,
