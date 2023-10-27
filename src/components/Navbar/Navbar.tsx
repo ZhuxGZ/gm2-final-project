@@ -1,11 +1,14 @@
+import { useState } from 'react';
 import { NavBrand } from './NavBrand';
 import { NavLinks } from './NavLinks';
 import './Navbar.css';
 export const Navbar = () => {
+	const [menuState, setMenuState] = useState(false);
+
 	return (
-		<nav>
+		<nav className={menuState ? 'nav-open' : ''}>
 			<NavBrand />
-			<NavLinks />
+			<NavLinks menuState={menuState} setMenuState={setMenuState} />
 		</nav>
 	);
 };
