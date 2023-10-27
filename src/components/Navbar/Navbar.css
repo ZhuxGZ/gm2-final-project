@@ -49,6 +49,20 @@ nav.nav-open {
 	gap: 0.7em;
 }
 
+.nav-cart,
+.wishlist,
+.metrics,
+.shop.logged {
+	display: none;
+}
+
+.nav-open .nav-cart,
+.nav-open .wishlist,
+.nav-open .metrics,
+.nav-open .shop.logged {
+	display: block;
+}
+
 .nav-item {
 	font-size: 1.25em;
 	text-align: center;
@@ -91,4 +105,29 @@ nav.nav-open {
 	border: none;
 	width: fit-content;
 	cursor: pointer;
+}
+
+@media screen and (min-width: 720px) {
+	nav {
+		grid-template-columns: 55% 35% 10%;
+	}
+	.burger-menu {
+		display: none;
+	}
+
+	.nav-list {
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: center;
+		gap: 1em;
+		color: white;
+	}
+
+	.nav-cart,
+	.wishlist,
+	.metrics,
+	.shop,
+	.shop.logged {
+		display: block;
+	}
 }

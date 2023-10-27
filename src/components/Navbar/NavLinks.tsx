@@ -15,19 +15,20 @@ export const NavLinks = (props) => {
 	return (
 		<>
 			<ul className="nav-list">
-				{isLogged && menuState && (
+				{isLogged && (
 					<>
-						<li className="nav-item">Metrics</li>
-						<li className="nav-item">
+						<li className="nav-item metrics">Metrics</li>
+						<li className="nav-item wishlist">
 							<Link to="/wishlist">Whislist</Link>
 						</li>
 					</>
 				)}
-				<li className="nav-item">
+
+				<li className={`nav-item shop  ${isLogged ? 'logged' : ''}`}>
 					<Link to="/shop">Shop</Link>
 				</li>
 
-				{isLogged && menuState && (
+				{isLogged && (
 					<li className="nav-item nav-cart">
 						<Link to="/cart">
 							<CartSvg />
