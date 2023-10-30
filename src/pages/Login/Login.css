@@ -18,6 +18,14 @@
 	flex-shrink: 0;
 }
 
+.login-error-message {
+	border-radius: 0.35em;
+	background-color: darkred;
+	color: red;
+	padding: 8px 17px;
+	width: 350px;
+}
+
 .img-login {
 	border-radius: 1em;
 }
